@@ -1,5 +1,10 @@
 pipeline {
-  agent none
+  agent {
+    node {
+      label '34.76.66.41'
+    }
+
+  }
   stages {
     stage('resotre') {
       steps {
