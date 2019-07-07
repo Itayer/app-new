@@ -1,9 +1,24 @@
 pipeline {
-  agent any
+  agent none
   stages {
-    stage('') {
+    stage('resotre') {
       steps {
-        echo 'dor'
+        sh 'npm install'
+      }
+    }
+    stage('test') {
+      steps {
+        sh 'npm test'
+      }
+    }
+    stage('build') {
+      steps {
+        sh 'npm run build'
+      }
+    }
+    stage('archive') {
+      steps {
+        archiveArtifacts '*.zip'
       }
     }
   }
